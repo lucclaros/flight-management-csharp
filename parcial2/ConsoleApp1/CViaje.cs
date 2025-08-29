@@ -5,19 +5,17 @@ namespace EmpresaAterrizar
 {
     abstract class CViaje : IComparable
     {
-        //PUNTO A
         private string codigo;
         private string origen;
         private string destino;
         private float precio;
-        //PUNTO D
+
         public CViaje(string cod, string orig, string dest)
         {
             this.codigo = cod;
             this.origen = orig;
             this.destino = dest;
         }
-        //PUNTO C
         public string GetOrigen()
         {
             return this.origen;
@@ -30,13 +28,11 @@ namespace EmpresaAterrizar
         {
             return this.codigo;
         }
-        //PUNTO D
         public float PrecioViaje
         {
             set { this.precio = value; }
             get { return this.precio; }
         }
-        //PUNTO E
         public float darPrecio(float cuotas)
         {
             if (cuotas == 1)
@@ -61,16 +57,14 @@ namespace EmpresaAterrizar
                 return -1;
             }
         }
-        //PUNTO F
         public virtual string darDatos()
         {
             string datos = "Codigo del vuelo: " + this.codigo;
             datos += " - Origen del vuelo: " + this.origen;
             datos += " - Destino: " + this.destino;
-            datos += " - Precio: " + this.precio.ToString(); // no olvidarme del tostring
+            datos += " - Precio: " + this.precio.ToString(); 
             return datos;
         }
-        // PUNTO G
         public int CompareTo(Object? obj)
         {
 
@@ -89,6 +83,6 @@ namespace EmpresaAterrizar
 
             return 3;
         }
-        // CREO Q ESTA BIEN.............
     }
+
 }
