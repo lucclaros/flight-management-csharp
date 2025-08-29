@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections; // para el arraylist
+using System.Collections; 
 namespace EmpresaAterrizar
 {
     class CCatalogo
-    { // PUNTO A
+    { 
         private ArrayList listado;
         public CCatalogo()
         { 
@@ -11,17 +11,17 @@ namespace EmpresaAterrizar
         }
 
 
-        // punto b
+        
         public bool Registrar(string cod, string orig, string dest, float prec, string tipo)
         {
             foreach (CAereo aux in this.listado) 
             { 
-                if(aux.GetCodigo() == cod) // se manejan los caereo, y puedo ir al getcodigo porque heredó del padre
+                if(aux.GetCodigo() == cod) 
                 {
                     return false;
                 }
             }
-            this.listado.Add(new CAereo(cod, orig, dest, prec, tipo)); // add y (que se agrega osea un new caereo)
+            this.listado.Add(new CAereo(cod, orig, dest, prec, tipo)); 
             return true;
         }
         public bool Remover(string cod)
@@ -46,3 +46,4 @@ namespace EmpresaAterrizar
 
     }
 }
+
